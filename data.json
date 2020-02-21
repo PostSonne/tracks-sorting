@@ -1,26 +1,20 @@
-[
-  {
-    "Track": [
-      {
-        "Index": "1",
-        "Image": "",
-        "IsLoved": "Madam_Kaplan любит эту композицию",
-        "TrackName": "A Crippled Mind",
-        "Artist": "Agonoize",
-        "ListeningCounter": "158 прослушиваний"
-      }
-    ]
-  },
-  {
-    "Track": [
-      {
-        "Index": "51",
-        "Image": "",
-        "IsLoved": "Madam_Kaplan любит эту композицию",
-        "TrackName": "In My World",
-        "Artist": "CHROM",
-        "ListeningCounter": "53 прослушивания"
-      }
-    ]
-  }
-]
+{
+  "tracks": [
+    {
+      "Index": "1",
+      "Image": "",
+      "IsLoved": "Madam_Kaplan любит эту композицию",
+      "TrackName": "A Crippled Mind",
+      "Artist": "Agonoize",
+      "ListeningCounter": "158 прослушиваний"
+    },
+    {
+      "Index": "51",
+      "Image": "",
+      "IsLoved": "Madam_Kaplan любит эту композицию",
+      "TrackName": "In My World",
+      "Artist": "CHROM",
+      "ListeningCounter": "53 прослушивания"
+    }
+  ]
+}
