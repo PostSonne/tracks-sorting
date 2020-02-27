@@ -3,7 +3,6 @@
   "linterOptions": {
     "exclude": [
       "node_modules/**/*.ts",
-      "src/serviceWorker.js"
     ]
   },
   "rules": {
