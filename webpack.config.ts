@@ -1,7 +1,7 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin"),
     HtmlWebpackPlugin = require("html-webpack-plugin"),
     HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-        template: __dirname + "index.html",
+        template: `${__dirname}/index.html`,
         filename: "index.html",
         inject: "body"
     });
@@ -17,8 +17,8 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.js$/, loader: "babel-loader", exclude: /node_modules/},
-            {test: /\.jsx$/, loader: "babel-loader", exclude: /node_modules/},
+            {test: /\.ts$/, loader: "babel-loader", exclude: /node_modules/},
+            {test: /\.tsx$/, loader: "babel-loader", exclude: /node_modules/},
             {test: /\.(png|jpg)$/, loader: "file-loader"},
             {test: /\.css$/,
                 loader: ExtractTextPlugin.extract(
