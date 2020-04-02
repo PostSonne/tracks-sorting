@@ -1,5 +1,4 @@
-export const Tracks = {
-  "tracks": [
+export const Tracks = [
     {
       "Index": "1",
       "Image": "",
@@ -60,6 +59,5 @@ export const Tracks = {
       "Artist": "Lady Gaga",
       "ListeningCounter": 1
     }
-  ]
-};
+];
 Object.keys(Tracks).map((item, index) => ({ item, id: index + 1 }));

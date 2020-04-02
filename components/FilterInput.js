@@ -8,7 +8,7 @@ const CountersInput = ({ index, props }) => (
 );
 
 export const CounterFilter = ({ value, onChange }) => (
-    <div className="Price">
+    <div className="counter">
         <CountersInput
             value={value[0]}
             onChange={onChange}

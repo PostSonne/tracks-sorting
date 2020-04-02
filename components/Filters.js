@@ -39,10 +39,10 @@ export const LikesFilter = ({ value, onChange, likes }) => (
     </div>
 );
 
-export const LanguageFilter = ({ value, onChange, language }) => (
+export const LanguageFilter = ({ value, onChange, languages }) => (
     <div className="language-filter">
         <h2>Язык исполнителя</h2>
-        {language.map(item => (
+        {languages.map(item => (
             <label
                 className="language"
                 key={item}

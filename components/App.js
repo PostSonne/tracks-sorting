@@ -6,18 +6,18 @@ import {CounterFilter} from "./FilterInput";
 export const App = ({ tracks }) => {
     const genres = React.useMemo(
         () => [
-            ...new Set(tracks.map(item => item.Genre))
+            ...new Set(tracks && tracks.map(item => item.Genre))
         ], [ tracks ]
     );
 
     const likes = React.useMemo(
         () => [
-            ...new Set(tracks.map(item => item.IsLoved))
+            ...new Set(tracks && tracks.map(item => item.IsLoved))
         ], [ tracks ]);
 
     const languages = React.useMemo(
         () => [
-            ...new Set(tracks.map(item => item.Language))
+            ...new Set(tracks && tracks.map(item => item.Language))
         ], [ tracks ]
     );
 
@@ -26,7 +26,7 @@ export const App = ({ tracks }) => {
     const [ language, setLanguage] = React.useState([]);
     const [ counter, setCounter] = React.useState([ "", "" ]);
 
-    const onGenreChange = e => setGenre(e.target.value);
+    const onGenreChange = () => {setGenre(e.target.value)};
 
     const onLikeChange = ({ target: { checked, value } }) => {
         setLike((!like.includes(value) && checked)
@@ -36,8 +36,8 @@ export const App = ({ tracks }) => {
     };
 
     const onLanguageChange = ({ target: { checked, value } }) => {
-        setLanguage((!like.includes(value) && checked)
-            ? [ ...like, value ]
+        setLanguage((!language.includes(value) && checked)
+            ? [ ...language, value ]
             : like.filter(n => n !== value)
         );
     };
@@ -45,12 +45,14 @@ export const App = ({ tracks }) => {
         setCounter(counter.map((n, i) => i === +index ? value : n));
     };
 
-    const filteredTracks = tracks.filter(item => (
-        (!genre || item.genre === genre) &&
-        (!like.length || like.includes(item.like)) &&
-        (!counter[0] || counter[0] <= item.cost) &&
-        (!counter[1] || counter[1] >= item.cost)
-    ));
+    const filteredTracks = tracks && tracks.filter(
+        item => (
+            (!genre || item.Genre === genre) &&
+            (!like || like.includes(item.IsLoved)) &&
+            (!counter[0] || counter[0] <= item.ListeningCounter) &&
+            (!counter[1] || counter[1] >= item.ListeningCounter)
+        )
+    );
 
     return (
         <div>

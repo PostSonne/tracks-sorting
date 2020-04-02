@@ -12,9 +12,7 @@ const Tracks = ({
     counter,
     children 
 }) => (
-    <div
-        className={className}
-    >
+    <div className={className}>
         <IsLiked>
             {liked}
         </IsLiked>
@@ -30,9 +28,9 @@ const Tracks = ({
         {children}
     </div>
 );
-export const TracksList = ({ children }) => (
+export const TracksList = ({ tracks }) => (
     <Tracks>
-        {children.map(item => (
+        {tracks.map(item => (
             <div
                 className="track-item"
                 title={item.TrackName}
